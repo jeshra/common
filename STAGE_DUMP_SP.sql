@@ -126,3 +126,59 @@ BEGIN
     );
 END;
 /
+
+BEGIN
+    PRTL_WC_STAGE_DUMP_SP(
+        UPLOAD_ID => 1,
+        TABLE_NAME => 'INSTRUMENT_TYPE',
+        JSON_DATA => '{
+    "UPLOAD_ID": 1,
+    "TABLE_NAME": "INSTRUMENT_TYPE",
+	"LAST_UPDATED_BY_USER": "JohnDoe",
+    "LAST_UPDATED_BY_TIME": "2025-01-28T12:00:00",
+    "ROWS": [
+        {
+            "OPERATION_TYPE": "INSERT",
+            "TOTAL_KEY_COLS": 5,
+            "KEY_VALUES": [
+                {"NAME": "SRC_SYS_CD", "VALUE": "LONNA"},
+                {"NAME": "INST_TYP_CD", "VALUE": "CHEQUE"},
+                {"NAME": "INST_TYP_VAL", "VALUE": "3223"},
+                {"NAME": "INST_LINK_CD", "VALUE": "HHM-JDS"},
+                {"NAME": "INST_TYPE_DESC", "VALUE": "Special Type"}
+            ]
+        }, 
+        {
+            "OPERATION_TYPE": "INSERT",
+            "TOTAL_KEY_COLS": 4,
+            "KEY_VALUES": [
+                {"NAME": "SRC_SYS_CD", "VALUE": "LONNA2"},
+                {"NAME": "INST_TYP_CD", "VALUE": "CHEQUE2"},
+                {"NAME": "INST_TYP_VAL", "VALUE": "32232"},
+                {"NAME": "INST_LINK_CD", "VALUE": "HHM-JDS2"}
+            ]
+        }, 
+        {
+            "OPERATION_TYPE": "INSERT",
+            "TOTAL_KEY_COLS": 3,
+            "KEY_VALUES": [
+                {"NAME": "SRC_SYS_CD", "VALUE": "LONNA1"},
+                {"NAME": "INST_TYP_CD", "VALUE": "CHEQUE1"},
+                {"NAME": "INST_TYP_VAL", "VALUE": "32231"}
+            ]
+        },
+        {
+            "OPERATION_TYPE": "UPDATE",
+            "TOTAL_KEY_COLS": 4,
+            "KEY_VALUES": [
+                {"NAME": "SRC_SYS_CD", "VALUE": "LONNA5"},
+                {"NAME": "INST_TYP_CD", "VALUE": "CHEQUE5"},
+                {"NAME": "INST_TYP_VAL", "VALUE": "32235"},
+                {"NAME": "INST_LINK_CD", "VALUE": "HHM-JDS5"}
+            ]
+        }
+    ]
+}'
+    );
+END;
+/
